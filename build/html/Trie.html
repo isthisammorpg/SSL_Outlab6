@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trie module &mdash; outlabq2  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="SinglyLinkedList module" href="SinglyLinkedList.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> outlabq2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">bonus</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="BinarySearchTree.html">BinarySearchTree module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DSA.html">DSA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DoublyLinkedList.html">DoublyLinkedList module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Heap.html">Heap module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SinglyLinkedList.html">SinglyLinkedList module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Trie module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">outlabq2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">bonus</a> &raquo;</li>
+      <li>Trie module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Trie.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Trie">
+<span id="trie-module"></span><h1>Trie module<a class="headerlink" href="#module-Trie" title="Permalink to this headline"></a></h1>
+<p>This module contains the implementation of abstract data type Suffix Trie.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Trie.Trie">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Trie.</span></span><span class="sig-name descname"><span class="pre">Trie</span></span><a class="headerlink" href="#Trie.Trie" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is the class implementation of a Suffix Trie.
+<br /> An instance of this class is a Trie which is used for the storage of various substrings of a string in the form of a tree with nodes where each node stores a character of the string.</p>
+<p>This class has five member functions one of which is a constructor:</p>
+<ul class="simple">
+<li><p>__init__() is the constructor</p></li>
+<li><p>find(root, c)</p></li>
+<li><p>insert(s)</p></li>
+<li><p>checkPrefix(s)</p></li>
+<li><p>countPrefix(s)</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="Trie.Trie.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Trie.Trie.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Constructor method for Suffix Trie.
+<br /> This sets the class variable T to an empty dictionary.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Trie</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="go">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+<span class="go">&lt;class &#39;dict&#39;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Trie.Trie.checkPrefix">
+<span class="sig-name descname"><span class="pre">checkPrefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Trie.Trie.checkPrefix" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if the given string s is present as prefix in the suffix trie.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string to be checked</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if found, else return False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Trie</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Stunning&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">checkPrefix</span><span class="p">(</span><span class="s1">&#39;Stun&#39;</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Trie.Trie.countPrefix">
+<span class="sig-name descname"><span class="pre">countPrefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Trie.Trie.countPrefix" title="Permalink to this definition"></a></dt>
+<dd><p>Counts the number of prefixes of the string s in the Suffix Trie.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – The string whose prefix count is required</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>prefix count of s</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Trie</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Vaibhav&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Vaibhavi&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Vaishnavi&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Vishal&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Raman&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">countPrefix</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">),</span> <span class="n">sample</span><span class="o">.</span><span class="n">countPrefix</span><span class="p">(</span><span class="s1">&#39;Vai&#39;</span><span class="p">),</span> <span class="n">sample</span><span class="o">.</span><span class="n">countPrefix</span><span class="p">(</span><span class="s1">&#39;Vaibhav&#39;</span><span class="p">))</span>
+<span class="go">4 3 2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">countPrefix</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">),</span> <span class="n">sample</span><span class="o">.</span><span class="n">countPrefix</span><span class="p">(</span><span class="s1">&#39;Tarzan&#39;</span><span class="p">))</span>
+<span class="go">1 0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Trie.Trie.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Trie.Trie.find" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the element c(character) in the heap and returns its position?.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>dict</em>) – It is the dictionary in which character c is to be searched</p></li>
+<li><p><strong>c</strong> (<em>char</em>) – Character to be searched in the dictionary</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns True if found, else returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Trie</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;sample&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Trie.Trie.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Trie.Trie.insert" title="Permalink to this definition"></a></dt>
+<dd><p>Inserts a given string into the Trie.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string to be inserted</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Trie</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Tree&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">),</span> <span class="n">sample</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">),</span> <span class="n">sample</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="s1">&#39;r&#39;</span><span class="p">],</span> <span class="s1">&#39;e&#39;</span><span class="p">),</span> <span class="n">sample</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="s1">&#39;r&#39;</span><span class="p">][</span><span class="s1">&#39;e&#39;</span><span class="p">],</span> <span class="s1">&#39;e&#39;</span><span class="p">))</span>
+<span class="go">True True True True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="go">{&#39;T&#39;: {&#39;#&#39;: 1, &#39;r&#39;: {&#39;#&#39;: 1, &#39;e&#39;: {&#39;#&#39;: 1, &#39;e&#39;: {&#39;#&#39;: 1}}}}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SinglyLinkedList.html" class="btn btn-neutral float-left" title="SinglyLinkedList module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 210050159.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
