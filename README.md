@@ -4,4 +4,4 @@
 
 ## This is hosted on the readthedocs website too
 
-### The link to the website is: 
+### The link to the website is: https://ssl-outlab6.readthedocs.io
